@@ -1,0 +1,27 @@
+<div
+  class="main-container"
+  cdkDropListGroup
+>
+
+
+  <div
+    class="example-container"
+    *ngFor="let list of dataLists; index as i"
+  >
+    <div>
+      <h2>{{list.title}}</h2>
+    </div>
+
+
+    <div
+      cdkDropList
+      [cdkDropListAutoScrollStep]="15"
+      [cdkDropListData]="list.content"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of list.content" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+
+
+</div>
